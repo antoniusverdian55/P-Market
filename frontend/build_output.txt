@@ -1,0 +1,22 @@
+Γû▓ Next.js 16.1.6 (Turbopack)
+
+  Creating an optimized production build ...
+Γ£ô Compiled successfully in 4.7s
+  Running TypeScript ...
+Failed to compile.
+
+./src/app/discover/page.tsx:161:41
+Type error: Type '(value: number) => [string, "Value"]' is not assignable to type 'Formatter<number, "Value"> & ((value: number, name: "Value", item: Payload<number, "Value">, index: number, payload: Payload<number, "Value">[]) => ReactNode | [...])'.
+  Type '(value: number) => [string, "Value"]' is not assignable to type 'Formatter<number, "Value">'.
+    Types of parameters 'value' and 'value' are incompatible.
+      Type 'number | undefined' is not assignable to type 'number'.
+        Type 'undefined' is not assignable to type 'number'.
+
+  159 |                                             fontSize: '12px',
+  160 |                                         }}
+> 161 |                                         formatter={(value: number) => [`$${value.toFixed(2)}T`, 'Value']}
+      |                                         ^
+  162 |                                         labelFormatter={(label) => new Date(label).toLocaleDateString()}
+  163 |                                     />
+  164 |                                     <Line
+Next.js build worker exited with code: 1 and signal: null
