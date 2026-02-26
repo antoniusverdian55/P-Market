@@ -7,13 +7,18 @@ from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 
 from routers import data, portfolio, chat, brief, admin, charts
+from db.connection import init_db, close_db
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Application lifecycle manager."""
     print("🚀 Cube Trade Backend starting...")
+    # Initialize database
+    await init_db()
     yield
+    # Cleanup on shutdown
+    await close_db()
     print("👋 Cube Trade Backend shutting down...")
 
 
