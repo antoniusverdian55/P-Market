@@ -2,7 +2,13 @@
 
 ## Overview
 
-P Market uses **PostgreSQL** with **Drizzle ORM** for data persistence. The database schema includes tables for:
+P Market uses **PostgreSQL** with **Python Drizzle ORM** for data persistence.
+
+> **Note:** This project uses the **Python Drizzle ORM** (`drizzle` package), which is different from the TypeScript Drizzle ORM. Therefore, **Drizzle Studio** (the web UI) is not available. For database visualization, use:
+> - **DBeaver** (recommended): https://dbeaver.io/download/
+> - **pgAdmin**: https://www.pgadmin.org/download/
+> - **TablePlus**: https://tableplus.com/
+> - Or use our built-in **CLI viewer**: `python db_viewer.py` The database schema includes tables for:
 
 - 👥 Users & Authentication
 - 💼 Portfolios & Positions
